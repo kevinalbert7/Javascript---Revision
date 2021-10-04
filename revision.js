@@ -87,15 +87,16 @@ console.log(checkPal("racecar"))
 
 function swap(string){
     
-    string.split("")
-    console.log(string)
-    for(var i = 0; i < string.lenght; i++){
-        console.log(i)
-        if(string[i] === string[i].toUpperCase()){
-            console.log(string[i].toLowerCase)
+    var word = ""
+    
+    for(var i = 0; i < word.length; i++){
+    
         
-        }else if(string[i] === string[i].toLowerCase()){
-            console.log(string[i].toUpperCase)
+        if(word.charAt(i) === word.charAt(i).toUpperCase()){
+            word = word + i
+        
+        }else if(word.charAt(i) === word.charAt(i).toLowerCase()){
+            word = word + i
         }
     }
 }
