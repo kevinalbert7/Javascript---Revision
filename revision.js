@@ -57,28 +57,27 @@ console.log(countEach)
 // - La fonction retourne "Palindrome !" si le mot se lit dans les deux sens, sinon elle retourne "Nope"
 // - Vérifiez que vous obtenez un positif avec l'argument "racecar" mais pas avec "laptop"
 
-function checkPal(string){
+function checkPal(string = ""){
     
     var stringArray = string.split("")
-        console.log("la décomposition de la string : ", stringArray)
-    var stringInverse = stringArray.reverse()
-        console.log("l'inverse de la string: ", stringInverse)
+        // console.log("la décomposition de la string : ", stringArray)
+    var stringInverse = string.split("").reverse()
+        // console.log("l'inverse de la string: ", stringInverse)
 
-    for(var i = 0; i < stringInverse.lenght; i++)
-    
-    if(stringArray[i] == stringInverse[i]){
-        console.log("Palindrome !")
-    
-    }else{
-        console.log("Nope")
+    for(var i = 0; i < stringInverse.length; i++){
+        // console.log("resultat de array : ", stringArray[i])
+        // console.log("resultat de inverse :", stringInverse[i])
+        if(stringArray[i] !== stringInverse[i]){
+            return "Nope"
+        }  
     }
+    return "Palindrome !"    
 }
 
-checkPal("racecar")
-console.log(checkPal)
+var check = checkPal("laptop")
+console.log(check)
 
-checkPal("laptop")
-console.log(checkPal)
+console.log(checkPal("racecar"))
 
 // ## 04 - Swap
 
@@ -86,23 +85,24 @@ console.log(checkPal)
 // - La fonction retourne une string avec la casse inverse : une majuscule deviendra minuscule et vice-versa
 // - Appelez votre fonction avec l'argument "Hello World" et vérifiez que vous obtenez "hELLO wORLD"
 
-// function swap(string){
+function swap(string){
     
-//     string.split("")
-//     return string
-    
-    // for(var i = 0; i < string.lenght; i++){
+    string.split("")
+    console.log(string)
+    for(var i = 0; i < string.lenght; i++){
+        console.log(i)
+        if(string[i] === string[i].toUpperCase()){
+            console.log(string[i].toLowerCase)
         
-    //     if(string[i] === string[i].toUpperCase()){
-    //         console.log(string[i].toLowerCase)
-    //     }else if(string[i] === string[i].toLowerCase()){
-    //         console.log(string[i].toUpperCase)
-    //     }
-    // }
-// }
+        }else if(string[i] === string[i].toLowerCase()){
+            console.log(string[i].toUpperCase)
+        }
+    }
+}
 
-// swap("Hello World")
-// console.log(swap)
+var test = swap("Hello World")
+console.log(test)
+console.log(swap("Hello World"))
 
 //  Bonus
 
