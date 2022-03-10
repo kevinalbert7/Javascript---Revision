@@ -4,14 +4,14 @@
 // - La fonction retourne une string avec les mêmes lettres, dans l'ordre alphabétique
 // - Appelez votre fonction avec "konexio" comme argument et vérifiez que vous obtenez "eiknoox"
 
-const sortLetters = (str) => {
-    var array = str.split("").sort()
-    var word = array.join("")
+// const sortLetters = (str) => {
+//     var array = str.split("").sort()
+//     var word = array.join("")
 
-    console.log(word)
-}
+//     console.log(word)
+// }
 
-sortLetters("konexio")
+// sortLetters("konexio")
 
 // ## 02 - XOXO
 console.log("-----------------------------------------------------------------------------")
@@ -22,9 +22,30 @@ console.log("-------------------------------------------------------------------
 
 const countEach = (str) => {
 
+    var oCounter = 0
+    var xCounter = 0
+
+    for (var i = 0; i < str.length; i++) {
+        
+        if (str[i] === "o") {
+            oCounter ++
+        }
+        else if (str[i] === "x") {
+            xCounter ++
+        }
+    }
+
+    if (oCounter === xCounter) {
+        console.log("true")
+    } else {
+        console.log("false")
+    }
+    // console.log(oCounter)
+    // console.log(xCounter)
 }
 
-
+countEach("xxxoooox")
+countEach("xox")
 
 
 
@@ -158,3 +179,21 @@ const countEach = (str) => {
 
 
 //     sortLetters("kOneXiO")
+
+
+
+
+// const transform = (str) => {
+    // return str.split("o").join("opo")
+    // if (str.split("o")) {
+    //     str.join("opo")
+    // } else if ( str.split("e")) {
+    //     str.join("epe")
+    // }
+//     for (var i = 0; i < str.length; i++) {
+//         var o = str.replace("o", "opo")
+//          var e = str.replace("e", "epe")
+//     }
+// }
+// console.log(transform('Bonjour'))
+// console.log(transform("Ceci est un test pour HDM"))
