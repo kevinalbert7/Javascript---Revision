@@ -1,54 +1,60 @@
 // ## 01 - Alphabet
 
-
 // - Créer une fonction `sortLetters` qui reçoit une string en paramètre
 // - La fonction retourne une string avec les mêmes lettres, dans l'ordre alphabétique
 // - Appelez votre fonction avec "konexio" comme argument et vérifiez que vous obtenez "eiknoox"
 
-function sortLetters(word){
-    var array = word.split("")
-    var rArray = array.sort()
-    var total = rArray.join("")
+const sortLetters = (str) => {
+    var array = str.split("").sort()
+    var word = array.join("")
 
-    console.log(total)
+    console.log(word)
 }
 
-    sortLetters("konexio")
+sortLetters("konexio")
 
 // ## 02 - XOXO
-// console.log("-----------------------------------------------------------------------------")
+console.log("-----------------------------------------------------------------------------")
 
 // - Créez une fonction `countEach` qui reçoit une string contenant des x et des o en paramètre
 // - La fonction retourne true si il y a autant de x que de o, sinon elle retourne false
 // - Vérifiez que l'argument "xxxoooox" déclenche un true, et que "xox" déclenche un false
 
-function countEach(string){
+const countEach = (str) => {
 
-    var xTotal = 0
-    var oTotal = 0
+}
 
-    for ( var i = 0; i < string.length; i++){
-        console.log(string[i])
 
-        if(string[i] === "x"){
-            xTotal++
-        }else if(string[i] === "o"){
-            oTotal++
-        } 
-    }
+
+
+
+// function countEach(string){
+
+//     var xTotal = 0
+//     var oTotal = 0
+
+//     for ( var i = 0; i < string.length; i++){
+//         console.log(string[i])
+
+//         if(string[i] === "x"){
+//             xTotal++
+//         }else if(string[i] === "o"){
+//             oTotal++
+//         } 
+//     }
 
     
-    if( xTotal === oTotal ){
-        console.log(true)
-    } else {
-        console.log(false)
-    }
-}
-countEach("xxxoooox")
-console.log(countEach)
+//     if( xTotal === oTotal ){
+//         console.log(true)
+//     } else {
+//         console.log(false)
+//     }
+// }
+// countEach("xxxoooox")
+// console.log(countEach)
 
-countEach("xox")
-console.log(countEach)
+// countEach("xox")
+// console.log(countEach)
 
 // ## 03 - Palindrome
 // console.log("-----------------------------------------------------------------------------")
@@ -57,27 +63,27 @@ console.log(countEach)
 // - La fonction retourne "Palindrome !" si le mot se lit dans les deux sens, sinon elle retourne "Nope"
 // - Vérifiez que vous obtenez un positif avec l'argument "racecar" mais pas avec "laptop"
 
-function checkPal(string = ""){
+// function checkPal(string = ""){
     
-    var stringArray = string.split("")
-        // console.log("la décomposition de la string : ", stringArray)
-    var stringInverse = string.split("").reverse()
-        // console.log("l'inverse de la string: ", stringInverse)
+//     var stringArray = string.split("")
+//         // console.log("la décomposition de la string : ", stringArray)
+//     var stringInverse = string.split("").reverse()
+//         // console.log("l'inverse de la string: ", stringInverse)
 
-    for(var i = 0; i < stringInverse.length; i++){
-        // console.log("resultat de array : ", stringArray[i])
-        // console.log("resultat de inverse :", stringInverse[i])
-        if(stringArray[i] !== stringInverse[i]){
-            return "Nope"
-        }  
-    }
-    return "Palindrome !"    
-}
+//     for(var i = 0; i < stringInverse.length; i++){
+//         // console.log("resultat de array : ", stringArray[i])
+//         // console.log("resultat de inverse :", stringInverse[i])
+//         if(stringArray[i] !== stringInverse[i]){
+//             return "Nope"
+//         }  
+//     }
+//     return "Palindrome !"    
+// }
 
-var check = checkPal("laptop")
-console.log(check)
+// var check = checkPal("laptop")
+// console.log(check)
 
-console.log(checkPal("racecar"))
+// console.log(checkPal("racecar"))
 
 // ## 04 - Swap
 
@@ -85,25 +91,23 @@ console.log(checkPal("racecar"))
 // - La fonction retourne une string avec la casse inverse : une majuscule deviendra minuscule et vice-versa
 // - Appelez votre fonction avec l'argument "Hello World" et vérifiez que vous obtenez "hELLO wORLD"
 
-function swap(string){
+// function swap(stg = ""){
     
-    var word = ""
-    
-    for(var i = 0; i < word.length; i++){
+//     for(var i = 0; i < stg.length; i++){
     
         
-        if(word.charAt(i) === word.charAt(i).toUpperCase()){
-            word = word + i
+//         if(stg.charAt(i) === stg.charAt(i).toUpperCase()){
+//             return stg = stg + stg.charAt(i).toLowerCase()
         
-        }else if(word.charAt(i) === word.charAt(i).toLowerCase()){
-            word = word + i
-        }
-    }
-}
+//         }else if(stg.charAt(i) === stg.charAt(i).toLowerCase()){
+//             return stg = stg + stg.charAt(i).toUpperCase()
+//         }
+//     }
+    
+// }
 
-var test = swap("Hello World")
-console.log(test)
-console.log(swap("Hello World"))
+
+// console.log(swap("Hello World"))
 
 //  Bonus
 
@@ -125,8 +129,7 @@ console.log(swap("Hello World"))
 //     }
 // }
 
-// makeItSpongeBob("Javascript is easy")
-// console.log(makeItSpongeBob)
+// console.log(makeItSpongeBob("Javascript is easy"))
 
 // ## ⭐ Bonus II
 
