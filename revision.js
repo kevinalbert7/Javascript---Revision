@@ -47,42 +47,29 @@ const countEach = (str) => {
 countEach("xxxoooox")
 countEach("xox")
 
-
-
-// function countEach(string){
-
-//     var xTotal = 0
-//     var oTotal = 0
-
-//     for ( var i = 0; i < string.length; i++){
-//         console.log(string[i])
-
-//         if(string[i] === "x"){
-//             xTotal++
-//         }else if(string[i] === "o"){
-//             oTotal++
-//         } 
-//     }
-
-    
-//     if( xTotal === oTotal ){
-//         console.log(true)
-//     } else {
-//         console.log(false)
-//     }
-// }
-// countEach("xxxoooox")
-// console.log(countEach)
-
-// countEach("xox")
-// console.log(countEach)
-
 // ## 03 - Palindrome
 // console.log("-----------------------------------------------------------------------------")
 
 // - Créez une fonction `checkPal` qui reçoit une string en paramètre
 // - La fonction retourne "Palindrome !" si le mot se lit dans les deux sens, sinon elle retourne "Nope"
 // - Vérifiez que vous obtenez un positif avec l'argument "racecar" mais pas avec "laptop"
+
+const checkPal = (str) => {
+
+    var pal = str.split("")
+    var pal1 = pal.reverse()
+    var pal2 = pal1.join("")
+
+    if (pal2 === str){
+        return "pal"
+    } else {
+        return "no pal"
+    }
+}
+
+var palindrome = checkPal("racecar")
+    palindrome = checkPal("laptop")
+console.log(palindrome)
 
 // function checkPal(string = ""){
     
