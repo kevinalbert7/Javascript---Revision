@@ -4,17 +4,17 @@
 // - La fonction retourne une string avec les mêmes lettres, dans l'ordre alphabétique
 // - Appelez votre fonction avec "konexio" comme argument et vérifiez que vous obtenez "eiknoox"
 
-// const sortLetters = (str) => {
-//     var array = str.split("").sort()
-//     var word = array.join("")
+const sortLetters = (str) => {
+    var lettersArray = str.split("")
+    var lettersSort = lettersArray.sort()
+    var lettersJoin = lettersSort.join("")
 
-//     console.log(word)
-// }
+    console.log(lettersJoin)
+}
 
-// sortLetters("konexio")
+sortLetters("konexio")
 
 // ## 02 - XOXO
-console.log("-----------------------------------------------------------------------------")
 
 // - Créez une fonction `countEach` qui reçoit une string contenant des x et des o en paramètre
 // - La fonction retourne true si il y a autant de x que de o, sinon elle retourne false
@@ -71,51 +71,26 @@ var palindrome = checkPal("racecar")
     palindrome = checkPal("laptop")
 console.log(palindrome)
 
-// function checkPal(string = ""){
-    
-//     var stringArray = string.split("")
-//         // console.log("la décomposition de la string : ", stringArray)
-//     var stringInverse = string.split("").reverse()
-//         // console.log("l'inverse de la string: ", stringInverse)
-
-//     for(var i = 0; i < stringInverse.length; i++){
-//         // console.log("resultat de array : ", stringArray[i])
-//         // console.log("resultat de inverse :", stringInverse[i])
-//         if(stringArray[i] !== stringInverse[i]){
-//             return "Nope"
-//         }  
-//     }
-//     return "Palindrome !"    
-// }
-
-// var check = checkPal("laptop")
-// console.log(check)
-
-// console.log(checkPal("racecar"))
-
 // ## 04 - Swap
 
 // - Créez une fonction `swap` qui reçoit une string en paramètre
 // - La fonction retourne une string avec la casse inverse : une majuscule deviendra minuscule et vice-versa
 // - Appelez votre fonction avec l'argument "Hello World" et vérifiez que vous obtenez "hELLO wORLD"
 
-// function swap(stg = ""){
-    
-//     for(var i = 0; i < stg.length; i++){
-    
-        
-//         if(stg.charAt(i) === stg.charAt(i).toUpperCase()){
-//             return stg = stg + stg.charAt(i).toLowerCase()
-        
-//         }else if(stg.charAt(i) === stg.charAt(i).toLowerCase()){
-//             return stg = stg + stg.charAt(i).toUpperCase()
-//         }
-//     }
-    
-// }
+const swap = (str) => {
+    var newSentence = ""
 
+    for(var i = 0; i < str.length; i++) {
+        if (str[i] === str[i].toLowerCase()) {
+            newSentence += str[i].toUpperCase()
+        } else {
+            newSentence += str[i].toLowerCase()
+        }
+    }
+    console.log(newSentence)
+}
 
-// console.log(swap("Hello World"))
+swap("Hello World")
 
 //  Bonus
 
@@ -123,50 +98,78 @@ console.log(palindrome)
 // - La fonction retourne une string avec le même texte en alternant majuscule / minuscule
 // - Appelez votre fonction avec l'argument "Javascript is easy" et vérifiez le résultat
 
-// function makeItSpongeBob(string){
-//     var spt = string.split("")
-//         console.log(spt)
-//     for(var i = 0; i < spt.length; i = i + 2){
-//         // spt = spt[i].toUpperCase
-//         // console.log(spt)
-//         if(spt[i] === 0 || spt[i] % 2 === 0){
-//             console.log(spt[i].toUpperCase)
-//         }else if(spt[i] % 2 !== 0){
-//             console.log(spt[i].toLowerCase)
-//         }
-//     }
-// }
+const makeItSpongeBob = (str) => {
+    let newSentence = str.split(" ")
+    let result = ""
 
-// console.log(makeItSpongeBob("Javascript is easy"))
+    for (var i = 0; i < newSentence.length; i++) {
+        for (var j = 0; j < newSentence[i].length; j++) {
+            if ( j % 2 === 0 ) {
+                result += newSentence[i][j].toLowerCase()
+            } else {
+                result += newSentence[i][j].toUpperCase()
+            }
+        }
+        result += " "
+    }
+    console.log("newSentence :", newSentence)
+    console.log("result :", result)
+}
+
+makeItSpongeBob("Javascript is easy")
 
 // ## ⭐ Bonus II
 
 // - tester votre exercice 1 avec un mélange de lettres majuscules et minuscules. Est ce que cela fonctionne toujours ?
 // - si non corrigez le !
 
-// function sortLetters(word){
-    
-//     var array = word.split("")
-//     var rArray = array.sort(
-//         (a, b) => {
-            
-//             if (a.toLowerCase() > b.toLowerCase()) {
-//                 return 1
-            
-//             }if (a.toUpperCase() < b.toLowerCase()) {
-//                 return -1
-//                 }
-//                 return 0
-//         }
-//     )    
-// }
-//     var total = rArray.join("")
-//     console.log(total)
+const sortLetters2 = (str) => {
+    var lettersToLower = str.toLowerCase()
+    var lettersArray = lettersToLower.split("")
+    var lettersSort = lettersArray.sort().join("")
+
+    console.log(lettersSort)
+}
+
+sortLetters2("KoNeXio")
+
+// ## ⭐ Bonus III
+
+// - Que retourne votre fonction de l'exercice 2 si vous lui passez autre chose que des x ou des o ? ou des X et O majuscules ?
+// - Rajoutez un message d'erreur explicite dans le premier cas et comptez les majuscules dans le second.
+
+const countEach2 = (str) => {
+
+    var oCounter = 0
+    var xCounter = 0
+    var uperLetters = 0
+        
+    for (var i = 0; i < str.length; i++) {
+        
+        if (str[i] === "o") {
+            oCounter ++
+        } else if (str[i] === "x") {
+            xCounter ++
+        } else if (str[i] === str[i].toUpperCase()) {
+            uperLetters ++
+        } else {
+            console.log("il n'y a aucun o ou x")
+        }
+    }
+
+    if (oCounter === xCounter) {
+        console.log("true")
+    } else {
+        console.log("false")
+    }
+
+    console.log("uperLetters :", uperLetters)
+}
 
 
-
-//     sortLetters("kOneXiO")
-
+countEach2("oooaxxx")
+countEach2("ahha")
+countEach2("ahHFFFHHha")
 
 
 
